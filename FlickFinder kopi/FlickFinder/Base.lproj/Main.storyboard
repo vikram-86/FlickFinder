@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Flick Finder View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="FlickFinderViewController" customModule="FlickFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flick Finder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6o8-Ar-9Nr">
+                                <rect key="frame" x="16" y="28" width="568" height="41"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
+                                <color key="textColor" red="0.93333333330000001" green="0.53333333329999999" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0kt-F0-3p5" userLabel="ImageContainer">
+                                <rect key="frame" x="16" y="77" width="568" height="300"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NfI-KV-e3W">
+                                        <rect key="frame" x="0.0" y="0.0" width="568" height="300"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="NfI-KV-e3W" secondAttribute="trailing" id="QlV-RV-tMf"/>
+                                    <constraint firstItem="NfI-KV-e3W" firstAttribute="leading" secondItem="0kt-F0-3p5" secondAttribute="leading" id="bAY-9S-d2p"/>
+                                    <constraint firstAttribute="bottom" secondItem="NfI-KV-e3W" secondAttribute="bottom" id="mtA-7S-0iC"/>
+                                    <constraint firstItem="NfI-KV-e3W" firstAttribute="top" secondItem="0kt-F0-3p5" secondAttribute="top" id="xeC-vO-kad"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a84-Z8-j6v" userLabel="SearchContainer">
+                                <rect key="frame" x="16" y="385" width="568" height="195"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search with a phrase" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bjr-9S-Sfp" userLabel="searchPhrase">
+                                        <rect key="frame" x="0.0" y="8" width="530" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NIk-Mx-ueC" userLabel="phraseButton">
+                                        <rect key="frame" x="538" y="8" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="1Ie-yZ-HCs"/>
+                                            <constraint firstAttribute="width" constant="30" id="Vjr-Vz-KZy"/>
+                                        </constraints>
+                                        <state key="normal" image="SearchButtonIcon">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="searchFlickByPhraseButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="08i-Tf-zlN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Wb-Kg-0Ny" userLabel="lat/lonButton">
+                                        <rect key="frame" x="538" y="46" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="IcY-JM-wxK"/>
+                                            <constraint firstAttribute="height" constant="30" id="tmI-og-V4t"/>
+                                        </constraints>
+                                        <state key="normal" image="SearchButtonIcon">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="searchFlickByLatitudeAndLongitudeButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="wWD-wV-8Dh"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Latitude" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gHR-be-Dnv" userLabel="latTextField">
+                                        <rect key="frame" x="0.0" y="46" width="260" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Longitude" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Xl-kU-5g8" userLabel="lonTextField">
+                                        <rect key="frame" x="270" y="46" width="260" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search for a flick with phrase or lat/lon.." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wBm-tT-hdq" userLabel="titleLabel">
+                                        <rect key="frame" x="0.0" y="84" width="568" height="111"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                        <color key="textColor" red="0.93333333330000001" green="0.1096072848" blue="0.80095672539999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="bjr-9S-Sfp" firstAttribute="leading" secondItem="a84-Z8-j6v" secondAttribute="leading" id="2Fb-TD-1L6"/>
+                                    <constraint firstAttribute="bottom" secondItem="wBm-tT-hdq" secondAttribute="bottom" id="54F-Du-mrQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="9Wb-Kg-0Ny" secondAttribute="trailing" id="7cS-LA-BMw"/>
+                                    <constraint firstItem="wBm-tT-hdq" firstAttribute="leading" secondItem="a84-Z8-j6v" secondAttribute="leading" id="EEA-8a-9Yr"/>
+                                    <constraint firstItem="gHR-be-Dnv" firstAttribute="leading" secondItem="a84-Z8-j6v" secondAttribute="leading" id="Mhj-6o-8LX"/>
+                                    <constraint firstItem="wBm-tT-hdq" firstAttribute="top" secondItem="a84-Z8-j6v" secondAttribute="top" constant="84" id="MmD-sO-fe1"/>
+                                    <constraint firstItem="9Wb-Kg-0Ny" firstAttribute="leading" secondItem="8Xl-kU-5g8" secondAttribute="trailing" constant="8" id="Mvw-Ob-cQV"/>
+                                    <constraint firstAttribute="trailing" secondItem="NIk-Mx-ueC" secondAttribute="trailing" id="PGo-9b-LSZ"/>
+                                    <constraint firstItem="8Xl-kU-5g8" firstAttribute="top" secondItem="bjr-9S-Sfp" secondAttribute="bottom" constant="8" id="Q0g-e5-vnZ"/>
+                                    <constraint firstItem="NIk-Mx-ueC" firstAttribute="leading" secondItem="bjr-9S-Sfp" secondAttribute="trailing" constant="8" id="SPh-Zi-wKq"/>
+                                    <constraint firstItem="bjr-9S-Sfp" firstAttribute="top" secondItem="a84-Z8-j6v" secondAttribute="top" constant="8" id="Xtr-fQ-hlr"/>
+                                    <constraint firstItem="gHR-be-Dnv" firstAttribute="width" secondItem="8Xl-kU-5g8" secondAttribute="width" id="dTE-9R-3Uf"/>
+                                    <constraint firstItem="NIk-Mx-ueC" firstAttribute="leading" secondItem="bjr-9S-Sfp" secondAttribute="trailing" constant="8" id="eWm-zb-EVi"/>
+                                    <constraint firstItem="NIk-Mx-ueC" firstAttribute="top" secondItem="a84-Z8-j6v" secondAttribute="top" constant="8" id="fG3-sf-L60"/>
+                                    <constraint firstAttribute="trailing" secondItem="8Xl-kU-5g8" secondAttribute="trailing" constant="38" id="fY0-ax-orO"/>
+                                    <constraint firstItem="gHR-be-Dnv" firstAttribute="top" secondItem="bjr-9S-Sfp" secondAttribute="bottom" constant="8" id="hxI-5w-S1L"/>
+                                    <constraint firstItem="8Xl-kU-5g8" firstAttribute="leading" secondItem="gHR-be-Dnv" secondAttribute="trailing" constant="10" id="ltx-hB-jWf"/>
+                                    <constraint firstItem="9Wb-Kg-0Ny" firstAttribute="top" secondItem="NIk-Mx-ueC" secondAttribute="bottom" constant="8" id="qim-SD-UnX"/>
+                                    <constraint firstItem="8Xl-kU-5g8" firstAttribute="leading" secondItem="gHR-be-Dnv" secondAttribute="trailing" constant="10" id="qyc-UG-yml"/>
+                                    <constraint firstAttribute="trailing" secondItem="wBm-tT-hdq" secondAttribute="trailing" id="sUG-LA-lxI"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.090196078430000007" green="0.45098039220000002" blue="0.6588235294" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="6o8-Ar-9Nr" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="1u9-ar-Xqj"/>
+                            <constraint firstItem="0kt-F0-3p5" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="6vc-Uc-TE7"/>
+                            <constraint firstItem="a84-Z8-j6v" firstAttribute="top" secondItem="0kt-F0-3p5" secondAttribute="bottom" constant="8" id="GeB-Qw-cRp"/>
+                            <constraint firstItem="0kt-F0-3p5" firstAttribute="top" secondItem="6o8-Ar-9Nr" secondAttribute="bottom" constant="8" id="IqU-Ss-fsH"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="0kt-F0-3p5" secondAttribute="bottom" constant="223" id="RmL-Ne-fXb"/>
+                            <constraint firstItem="0kt-F0-3p5" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="VEz-R7-j93"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="a84-Z8-j6v" secondAttribute="bottom" constant="20" id="Vuh-eO-Dam"/>
+                            <constraint firstItem="a84-Z8-j6v" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="jOh-1o-uwk"/>
+                            <constraint firstItem="6o8-Ar-9Nr" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="s6D-pC-TTS"/>
+                            <constraint firstItem="a84-Z8-j6v" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="sMd-7G-T2Y"/>
+                            <constraint firstItem="6o8-Ar-9Nr" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="td7-wQ-HHq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="NfI-KV-e3W" id="ZAw-gs-Aew"/>
+                        <outlet property="latTextfield" destination="gHR-be-Dnv" id="gtT-Lp-se8"/>
+                        <outlet property="lonTextfield" destination="8Xl-kU-5g8" id="YqD-hI-niv"/>
+                        <outlet property="phraseTextfield" destination="bjr-9S-Sfp" id="W9m-sV-Sxg"/>
+                        <outlet property="titleLabel" destination="wBm-tT-hdq" id="7Jw-ja-XL7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="636" y="401"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="SearchButtonIcon" width="37" height="37"/>
+    </resources>
+</document>
